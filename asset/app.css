@@ -1,0 +1,79 @@
+body {
+  background: #333;
+  color: white;
+}
+
+.main {
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 500px;
+  background: #999;
+  overflow: auto;
+  padding: 30px;
+  height: 520px;
+  border-radius: 20px;
+}
+
+.choose-player, .choose-side {
+  margin-top: 30px;
+}
+
+.choose-player .player {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.win {
+  background: #666;
+}
+
+button {
+  background: #343436;
+  outline: none;
+  border-radius: 30px;
+  border: 1px solid #1e1e1e;
+  padding: 5px 20px 5px 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #111;
+}
+
+.board {
+  width: 310px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  background: #111;
+  list-style: none;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+li:nth-child(4), li:nth-child(7) {
+  clear: both;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+
+footer a, footer a:hover, footer:visited {
+    text-decoration: none;
+    color: #666;
+}

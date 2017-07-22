@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue - Tic Tac Toe</title>
+  <script src="asset/vue.min.js"></script>
+  <link rel="stylesheet" href="asset/bootstrap.min.css">
+  <link rel="stylesheet" href="asset/app.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="choose-side"></div>
+    <div class="main text-center">
+      <div class="board row">
+        <ul class="text-center">
+          <li v-for="(value, index) in board" :class="{win: winningBlocks.indexOf(index) > -1 }"@click="move(index, playerTurn)">
+            <span v-if="value === 'E'"></span>
+            <span v-else :value="index"> {{ value }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="choose-player row" v-if="state == 'choose-player'">
+        <h3 class="row howmany">How do you want to play?</h3>
+        <div class="row">
+          <div class="col-xs-6 button" @click="choosePlayer(1)"><button>One Player</div>
+          <div class="col-xs-6 button" @click="choosePlayer(2)"><button>Two Player</button></div>
+        </div>
+      </div>
+    <div class="choose-side row" v-if="state == 'choose-side'">
+      <h3>Would you like to be X or O?</h3>
+      <div class="row">
+        <div class="col-xs-6" @click="chooseSide('o')"><button>O</button></div>
+        <div class="col-xs-6" @click="chooseSide('x')"><button>X</button></div>
+      </div>
+    </div>
+    <div class="row" v-if="state =='ended'">
+      <div class="row">
+        <h1>{{textEnded}}</h1>
+        <p>restart after few seconds.</p>
+
+        </div>
+    </div>
+    <div class="row" v-if="state != 'choose-player'">
+        <button @click="exit">Back to menu</button>
+    </div>
+    </div>
+    <footer class="text-center">Created by <a href="https://www.linkedin.com/in/sarunyhot" target="_blank" class="hilight">Kao</a> | <a href="https://github.com/chenka/vue-tic-tac-toe" target="_blank" class="hilight">Github</a></footer>
+  </div>
+
+  <script src="asset/app.js"></script>
+</body>
+</html>
